@@ -12,7 +12,7 @@ const Header = (props) => (
         <p>Frontside Varial Kickflip Developer</p>
       </div>
     </div>
-    <nav>
+    <nav className="use-middle">
       <ul>
         <li>
           <button
@@ -23,7 +23,7 @@ const Header = (props) => (
             About
           </button>
         </li>
-        <li>
+        <li className="is-middle">
           <button
             onClick={() => {
               props.onOpenArticle('contact');
