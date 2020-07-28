@@ -5,7 +5,7 @@ import photo from '../images/photo.jpg';
 class Main extends React.Component {
   render() {
     let close = (
-      <div
+      <button
         className="close"
         onClick={() => {
           this.props.onCloseArticle();

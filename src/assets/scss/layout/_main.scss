@@ -57,6 +57,9 @@
       height: 4rem;
       cursor: pointer;
       text-indent: 4rem;
+      background: transparent;
+      border: none;
+      box-shadow: none;
       overflow: hidden;
       white-space: nowrap;
 
@@ -81,7 +84,8 @@
         background-repeat: no-repeat;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         &:before {
           background-color: _palette(border-bg);
         }
