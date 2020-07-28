@@ -29,13 +29,13 @@ const Layout = ({ children, location }) => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <>
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
               { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' }
+              { name: 'keywords', content: 'sample, something' },
             ]}
           >
             <html lang="en" />
@@ -48,7 +48,7 @@ const Layout = ({ children, location }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

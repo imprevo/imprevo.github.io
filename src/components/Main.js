@@ -178,7 +178,7 @@ Main.propTypes = {
   articleTimeout: PropTypes.bool,
   onCloseArticle: PropTypes.func,
   timeout: PropTypes.bool,
-  setWrapperRef: PropTypes.func.isRequired
+  setWrapperRef: PropTypes.func.isRequired,
 };
 
 export default Main;
