@@ -1,19 +1,26 @@
-# gatsby-starter-dimension
+# imprevo-homepage
 
-**This is a starter for Gatsby.js V2.**
-
-**The older V1 version of this starter can be found on the v1 branch:**
-
-Gatsby.js V2 starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters-and-themes/ for more Gatsby starters and templates.
-
-## Preview
-
-https://gatsby-dimension.surge.sh/
+This project was bootstrapped with [Gatsby Starter Dimension](https://github.com/codebushi/gatsby-starter-dimension).
 
 ## Installation
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-<br/>
-`gatsby new gatsby-starter-dimension https://github.com/codebushi/gatsby-starter-dimension`
+Run `npm i` in the project directory.
 
-Run `gatsby develop` in the terminal to start the dev site.
+## Scripts
+
+In the project directory, you can run:
+
+### `npm run develop`
+
+Runs the app in the development mode.
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+
+### `npm run build`
+
+Builds the app for production to the `public` folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+ 
+### `npm run deploy` 
+
+Builds the app for production and deployed to github pages.
+Open [https://imprevo.github.io](https://imprevo.github.io) to view it in the browser.
