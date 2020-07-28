@@ -7,7 +7,7 @@
 /* BG */
 
 #bg {
-  @include vendor('transform', 'scale(1.0)');
+  transform: scale(1.0);
   -webkit-backface-visibility: hidden;
   position: fixed;
   top: 0;
@@ -28,11 +28,8 @@
   }
 
   &:before {
-    @include vendor(
-      'transition',
-      'background-color #{_duration(bg)} ease-in-out'
-    );
-    //@include vendor('transition-delay', '#{_duration(intro)}');
+    transition: background-color #{_duration(bg)} ease-in-out;
+    //transition-delay: #{_duration(intro)};
     background-image: linear-gradient(
         to top,
         #{_palette(bg-overlay)},
@@ -46,14 +43,9 @@
   }
 
   &:after {
-    @include vendor('transform', 'scale(1.125)');
-    @include vendor(
-      'transition',
-      (
-        'transform #{_duration(article)} ease-in-out',
-        'filter #{_duration(article)} ease-in-out'
-      )
-    );
+    transform: scale(1.125);
+    transition: transform #{_duration(article)} ease-in-out,
+        filter #{_duration(article)} ease-in-out;
     background-image: url('../../images/bg.jpg');
     background-position: center;
     background-size: cover;
@@ -63,8 +55,8 @@
 
   .body.is-article-visible & {
     &:after {
-      @include vendor('transform', 'scale(1.0825)');
-      @include vendor('filter', 'blur(0.2rem)');
+      transform: scale(1.0825);
+      filter: blur(0.2rem);
     }
   }
 

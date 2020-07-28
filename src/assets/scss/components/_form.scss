@@ -79,15 +79,10 @@ input[type='email'],
 input[type='tel'],
 select,
 textarea {
-  @include vendor('appearance', 'none');
-  @include vendor(
-    'transition',
-    (
-      'border-color #{_duration(transition)} ease-in-out',
-      'box-shadow #{_duration(transition)} ease-in-out',
-      'background-color #{_duration(transition)} ease-in-out'
-    )
-  );
+  appearance: none;
+  transition: border-color #{_duration(transition)} ease-in-out,
+      box-shadow #{_duration(transition)} ease-in-out,
+      background-color #{_duration(transition)} ease-in-out;
   background: transparent;
   border-radius: _size(border-radius);
   border: solid _size(border-width) _palette(border);
@@ -154,7 +149,7 @@ textarea {
 
 input[type='checkbox'],
 input[type='radio'] {
-  @include vendor('appearance', 'none');
+  appearance: none;
   display: block;
   float: left;
   margin-right: -2rem;
@@ -164,7 +159,7 @@ input[type='radio'] {
 
   & + label {
     @include icon;
-    @include vendor('user-select', 'none');
+    user-select: none;
     color: _palette(fg);
     cursor: pointer;
     display: inline-block;
@@ -176,14 +171,9 @@ input[type='radio'] {
     position: relative;
 
     &:before {
-      @include vendor(
-        'transition',
-        (
-          'border-color #{_duration(transition)} ease-in-out',
-          'box-shadow #{_duration(transition)} ease-in-out',
-          'background-color #{_duration(transition)} ease-in-out'
-        )
-      );
+      transition: border-color #{_duration(transition)} ease-in-out,
+          box-shadow #{_duration(transition)} ease-in-out,
+          background-color #{_duration(transition)} ease-in-out;
       border-radius: _size(border-radius);
       border: solid _size(border-width) _palette(border);
       content: '';
@@ -233,26 +223,7 @@ input[type='radio'] {
   }
 }
 
-::-webkit-input-placeholder {
-  color: _palette(fg-light) !important;
-  opacity: 1;
-}
-
-:-moz-placeholder {
-  color: _palette(fg-light) !important;
-  opacity: 1;
-}
-
-::-moz-placeholder {
-  color: _palette(fg-light) !important;
-  opacity: 1;
-}
-
-:-ms-input-placeholder {
-  color: _palette(fg-light) !important;
-  opacity: 1;
-}
-
+::placeholder,
 .formerize-placeholder {
   color: _palette(fg-light) !important;
   opacity: 1;

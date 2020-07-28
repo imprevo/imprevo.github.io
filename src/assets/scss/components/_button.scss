@@ -11,11 +11,9 @@ input[type='reset'],
 input[type='button'],
 button,
 .button {
-  @include vendor('appearance', 'none');
-  @include vendor(
-    'transition',
-    'background-color #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out'
-  );
+  appearance: none;
+  transition: background-color #{_duration(transition)} ease-in-out,
+    color #{_duration(transition)} ease-in-out;
   background-color: transparent;
   border-radius: _size(border-radius);
   border: 0;
@@ -69,7 +67,7 @@ button,
 
   &.disabled,
   &:disabled {
-    @include vendor('pointer-events', 'none');
+    pointer-events: none;
     cursor: default;
     opacity: 0.25;
   }

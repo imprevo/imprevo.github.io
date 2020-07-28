@@ -30,9 +30,9 @@ body {
     *,
     *:before,
     *:after {
-      @include vendor('animation', 'none !important');
-      @include vendor('transition', 'none !important');
-      @include vendor('transition-delay', 'none !important');
+      animation: none !important;
+      transition: none !important;
+      transition-delay: none !important;
     }
   }
 }
