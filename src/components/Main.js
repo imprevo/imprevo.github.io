@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faVk,
+  faInstagram,
+  faGithub,
+} from '@fortawesome/free-brands-svg-icons';
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import photo from '../images/photo.jpg';
 
 class Main extends React.Component {
@@ -53,28 +60,26 @@ class Main extends React.Component {
           <h2 className="major">Contact</h2>
           <ul className="icons">
             <li>
-              <a href="https://vk.com/imprevo" className="icon fa-vk">
+              <a href="https://vk.com/imprevo" className="icon">
+                <FontAwesomeIcon icon={faVk} />
                 <span className="label">Vkontakte</span>
               </a>
             </li>
             <li>
-              <a
-                href="https://www.instagram.com/_imprevo"
-                className="icon fa-instagram"
-              >
+              <a href="https://www.instagram.com/_imprevo" className="icon">
+                <FontAwesomeIcon icon={faInstagram} />
                 <span className="label">Instagram</span>
               </a>
             </li>
             <li>
-              <a href="https://github.com/imprevo" className="icon fa-github">
+              <a href="https://github.com/imprevo" className="icon">
+                <FontAwesomeIcon icon={faGithub} />
                 <span className="label">GitHub</span>
               </a>
             </li>
             <li>
-              <a
-                href="https://career.habr.com/imprevo"
-                className="icon fa-briefcase"
-              >
+              <a href="https://career.habr.com/imprevo" className="icon">
+                <FontAwesomeIcon icon={faBriefcase} />
                 <span className="label">Habr Career</span>
               </a>
             </li>
