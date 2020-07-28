@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 import Header from '../components/Header';
 import Main from '../components/Main';
@@ -108,7 +108,7 @@ class IndexPage extends React.Component {
             />
             <Footer timeout={this.state.timeout} />
           </div>
-          <div id="bg"></div>
+          <div id="bg" />
         </div>
       </Layout>
     );
