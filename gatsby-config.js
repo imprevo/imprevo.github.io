@@ -5,6 +5,7 @@ module.exports = {
     description: 'Frontside Varial Kickflip Developer',
   },
   plugins: [
+    'gatsby-plugin-preact',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
