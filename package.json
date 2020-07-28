@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imprevo/imprevo-homepage"
+    "url": "https://github.com/imprevo/imprevo.github.io"
   },
   "scripts": {
     "build": "gatsby build",
