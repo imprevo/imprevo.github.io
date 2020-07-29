@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import './styles.scss';
 
-const Header = (props) => (
+export const Header = (props) => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
       <FontAwesomeIcon icon={faLaptopCode} />
@@ -43,5 +44,3 @@ Header.propTypes = {
   onOpenArticle: PropTypes.func,
   timeout: PropTypes.bool,
 };
-
-export default Header;

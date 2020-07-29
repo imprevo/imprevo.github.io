@@ -1,7 +1,4 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
+@import 'libs';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
 /*
@@ -9,17 +6,6 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
-@include skel-breakpoints(
-  (
-    xlarge: '(max-width: 1680px)',
-    large: '(max-width: 1280px)',
-    medium: '(max-width: 980px)',
-    small: '(max-width: 736px)',
-    xsmall: '(max-width: 480px)',
-    xxsmall: '(max-width: 360px)',
-  )
-);
 
 @include skel-layout(
   (
@@ -42,11 +28,3 @@
 @import 'components/list';
 @import 'components/table';
 @import 'components/button';
-
-// Layout.
-
-@import 'layout/bg';
-@import 'layout/wrapper';
-@import 'layout/header';
-@import 'layout/main';
-@import 'layout/footer';

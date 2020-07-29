@@ -7,9 +7,10 @@ import {
   faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import photo from '../images/photo.jpg';
+import photo from '../../images/photo.jpg';
+import './styles.scss';
 
-class Main extends React.Component {
+export class Main extends React.Component {
   render() {
     let close = (
       <button
@@ -99,5 +100,3 @@ Main.propTypes = {
   timeout: PropTypes.bool,
   setWrapperRef: PropTypes.func.isRequired,
 };
-
-export default Main;
