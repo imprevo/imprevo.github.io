@@ -19,6 +19,7 @@ class IndexPage extends React.Component {
     this.handleCloseArticle = this.handleCloseArticle.bind(this);
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.handlePressESC = this.handlePressESC.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,7 @@ class IndexPage extends React.Component {
       this.setState({ loading: '' });
     }, 100);
     document.addEventListener('mousedown', this.handleClickOutside);
+    document.addEventListener('keydown', this.handlePressESC);
   }
 
   componentWillUnmount() {
@@ -33,6 +35,7 @@ class IndexPage extends React.Component {
       clearTimeout(this.timeoutId);
     }
     document.removeEventListener('mousedown', this.handleClickOutside);
+    document.removeEventListener('keydown', this.handlePressESC);
   }
 
   setWrapperRef(node) {
@@ -79,6 +82,14 @@ class IndexPage extends React.Component {
 
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      if (this.state.isArticleVisible) {
+        this.handleCloseArticle();
+      }
+    }
+  }
+
+  handlePressESC(event) {
+    if (event.code === 'Escape') {
       if (this.state.isArticleVisible) {
         this.handleCloseArticle();
       }
