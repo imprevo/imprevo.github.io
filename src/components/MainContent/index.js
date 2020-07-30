@@ -1,6 +1,7 @@
 import React from 'react';
+import cn from 'classnames';
 import { Header } from '../Header';
-import { Main } from '../Main';
+import { ArticleList } from '../ArticleList';
 import { Footer } from '../Footer';
 import { Background } from '../Background';
 import './styles.scss';
@@ -13,7 +14,7 @@ export class MainContent extends React.Component {
       timeout: false,
       articleTimeout: false,
       article: '',
-      loading: 'is-loading',
+      loading: true,
     };
     this.handleOpenArticle = this.handleOpenArticle.bind(this);
     this.handleCloseArticle = this.handleCloseArticle.bind(this);
@@ -24,7 +25,7 @@ export class MainContent extends React.Component {
 
   componentDidMount() {
     this.timeoutId = setTimeout(() => {
-      this.setState({ loading: '' });
+      this.setState({ loading: false });
     }, 100);
     document.addEventListener('mousedown', this.handleClickOutside);
     document.addEventListener('keydown', this.handlePressESC);
@@ -97,26 +98,31 @@ export class MainContent extends React.Component {
   }
 
   render() {
+    const {
+      timeout,
+      loading,
+      article,
+      isArticleVisible,
+      articleTimeout,
+    } = this.state;
     return (
       <div
-        className={`body ${this.state.loading} ${
-          this.state.isArticleVisible ? 'is-article-visible' : ''
-        }`}
+        className={cn('body', {
+          'is-loading': loading,
+          'is-article-visible': isArticleVisible,
+        })}
       >
-        <div id="wrapper">
-          <Header
-            onOpenArticle={this.handleOpenArticle}
-            timeout={this.state.timeout}
-          />
-          <Main
-            isArticleVisible={this.state.isArticleVisible}
-            timeout={this.state.timeout}
-            articleTimeout={this.state.articleTimeout}
-            article={this.state.article}
+        <div className="wrapper">
+          <Header onOpenArticle={this.handleOpenArticle} timeout={timeout} />
+          <ArticleList
+            isArticleVisible={isArticleVisible}
+            timeout={timeout}
+            articleTimeout={articleTimeout}
+            article={article}
             onCloseArticle={this.handleCloseArticle}
             setWrapperRef={this.setWrapperRef}
           />
-          <Footer timeout={this.state.timeout} />
+          <Footer timeout={timeout} />
         </div>
         <Background />
       </div>

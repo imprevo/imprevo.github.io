@@ -1,0 +1,17 @@
+@import '../../assets/scss/libs';
+
+.article-list {
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  max-width: 100%;
+  z-index: 3;
+  display: none;
+
+  &.timeout {
+    display: flex;
+  }
+}

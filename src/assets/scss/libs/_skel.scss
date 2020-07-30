@@ -220,7 +220,7 @@ $vendor-values: (
     width: $width * 0.25;
   }
 
-  // Main class.
+  // ArticleList class.
   .container {
     @if $lock {
       width: $width !important;
