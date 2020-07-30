@@ -18,83 +18,64 @@ export class MainContent extends React.Component {
     };
     this.handleOpenArticle = this.handleOpenArticle.bind(this);
     this.handleCloseArticle = this.handleCloseArticle.bind(this);
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.handlePressESC = this.handlePressESC.bind(this);
   }
 
   componentDidMount() {
     this.timeoutId = setTimeout(() => {
       this.setState({ loading: false });
     }, 100);
-    document.addEventListener('mousedown', this.handleClickOutside);
-    document.addEventListener('keydown', this.handlePressESC);
   }
 
   componentWillUnmount() {
     if (this.timeoutId) {
       clearTimeout(this.timeoutId);
     }
-    document.removeEventListener('mousedown', this.handleClickOutside);
-    document.removeEventListener('keydown', this.handlePressESC);
-  }
-
-  setWrapperRef(node) {
-    this.wrapperRef = node;
   }
 
   handleOpenArticle(article) {
+    if (this.state.isArticleVisible) {
+      return;
+    }
+
     this.setState({
-      isArticleVisible: !this.state.isArticleVisible,
+      isArticleVisible: true,
       article,
     });
 
     setTimeout(() => {
       this.setState({
-        timeout: !this.state.timeout,
+        timeout: true,
       });
     }, 325);
 
     setTimeout(() => {
       this.setState({
-        articleTimeout: !this.state.articleTimeout,
+        articleTimeout: true,
       });
     }, 350);
   }
 
   handleCloseArticle() {
+    if (!this.state.isArticleVisible) {
+      return;
+    }
+
     this.setState({
-      articleTimeout: !this.state.articleTimeout,
+      articleTimeout: false,
     });
 
     setTimeout(() => {
       this.setState({
-        timeout: !this.state.timeout,
+        timeout: false,
       });
     }, 325);
 
     setTimeout(() => {
       this.setState({
-        isArticleVisible: !this.state.isArticleVisible,
+        isArticleVisible: false,
         article: '',
       });
     }, 350);
-  }
-
-  handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      if (this.state.isArticleVisible) {
-        this.handleCloseArticle();
-      }
-    }
-  }
-
-  handlePressESC(event) {
-    if (event.code === 'Escape') {
-      if (this.state.isArticleVisible) {
-        this.handleCloseArticle();
-      }
-    }
   }
 
   render() {
@@ -115,12 +96,10 @@ export class MainContent extends React.Component {
         <div className="wrapper">
           <Header onOpenArticle={this.handleOpenArticle} timeout={timeout} />
           <ArticleList
-            isArticleVisible={isArticleVisible}
             timeout={timeout}
             articleTimeout={articleTimeout}
             article={article}
             onCloseArticle={this.handleCloseArticle}
-            setWrapperRef={this.setWrapperRef}
           />
           <Footer timeout={timeout} />
         </div>
