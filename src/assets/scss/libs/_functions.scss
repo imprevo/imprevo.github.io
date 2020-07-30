@@ -32,3 +32,19 @@
 @function _size($keys...) {
   @return val($size, $keys...);
 }
+
+/// Gets the real viewport width from CSS Custom Properties
+/// @see https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+/// @param {number} $keys Key(s).
+/// @return {string} value
+@function vw($quantity) {
+  @return calc(var(--vw, 1vh) * #{$quantity});
+}
+
+/// Gets the real viewport height from CSS Custom Properties
+/// @see https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+/// @param {number} $keys Key(s).
+/// @return {string} value
+@function vh($quantity) {
+  @return calc(var(--vh, 1vh) * #{$quantity});
+}
