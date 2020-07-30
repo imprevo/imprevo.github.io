@@ -21,13 +21,13 @@ export const ArticleList = ({
   onCloseArticle,
   timeout,
 }) => {
-  const clickOutsideRef = useRef();
-  useOnClickOutside(clickOutsideRef, onCloseArticle);
+  const wrapperRef = useRef();
+  useOnClickOutside(wrapperRef, onCloseArticle);
   usePressKey('Escape', onCloseArticle);
 
   return (
     <div className={cn('article-list', { timeout })}>
-      <div ref={clickOutsideRef}>
+      <div className="article-wrapper" ref={wrapperRef}>
         <Article
           id="about"
           active={article === 'about'}
