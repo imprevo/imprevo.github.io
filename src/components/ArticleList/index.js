@@ -57,6 +57,10 @@ export const ArticleList = ({
           onCloseArticle={onCloseArticle}
           title="Contact"
         >
+          <p>
+            If you want to contact me or want to know more about me, you can
+            find me on social networks.
+          </p>
           <ul className="icons">
             <li>
               <SocialIcon
