@@ -6,6 +6,9 @@ const buttonsOpen = document.querySelectorAll('nav ul li button');
 const buttonsClose = document.querySelectorAll('.article-close');
 
 const openArticle = (id) => {
+  if (body.classList.contains('is-article-visible')) {
+    return;
+  }
   const active = document.querySelector(`.article#${id}`);
   body.classList.add('is-article-visible');
   active.classList.add('active');
@@ -20,6 +23,9 @@ const openArticle = (id) => {
 };
 
 const sloseArticle = () => {
+  if (!body.classList.contains('is-article-visible')) {
+    return;
+  }
   const active = document.querySelector(`.article.active`);
   if (!active) {
     return;
