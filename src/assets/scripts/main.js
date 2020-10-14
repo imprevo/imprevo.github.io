@@ -21,6 +21,9 @@ const openArticle = (id) => {
 
 const sloseArticle = () => {
   const active = document.querySelector(`.article.active`);
+  if (!active) {
+    return;
+  }
   active.classList.remove('timeout');
   setTimeout(() => {
     header.classList.remove('timeout');
@@ -33,8 +36,6 @@ const sloseArticle = () => {
   }, 350);
 };
 
-// TODO: click outside
-
 buttonsOpen.forEach((button) => {
   button.addEventListener('click', () => openArticle(button.dataset.id));
 });
@@ -42,6 +43,16 @@ buttonsOpen.forEach((button) => {
 buttonsClose.forEach((button) => {
   button.addEventListener('click', () => sloseArticle());
 });
+
+const listener = (event) => {
+  const active = document.querySelector(`.article.active`);
+  if (active && !active.contains(event.target)) {
+    sloseArticle();
+  }
+};
+
+document.addEventListener('mousedown', listener);
+document.addEventListener('touchstart', listener);
 
 window.addEventListener('keydown', (event) => {
   if (event.code === 'Escape') {
