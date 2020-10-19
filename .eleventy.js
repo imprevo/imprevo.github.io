@@ -2,7 +2,7 @@ const pluginManifest = require('eleventy-plugin-manifest');
 
 // TODO: manifestand favicons
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
+  eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
   eleventyConfig.addPlugin(pluginManifest);
   eleventyConfig.setBrowserSyncConfig({
     files: ['dist/**/*'],
