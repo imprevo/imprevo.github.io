@@ -1,3 +1,5 @@
+import { setViewportSize } from './utils/viewport';
+
 const body = document.querySelector(`.body`);
 const header = document.querySelector(`.header`);
 const footer = document.querySelector(`.footer`);
@@ -69,13 +71,6 @@ window.addEventListener('keydown', (event) => {
 setTimeout(() => {
   body.classList.remove('is-loading');
 }, 100);
-
-const setViewportSize = () => {
-  const vh = window.innerHeight * 0.01;
-  const vw = window.innerWidth * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-  document.documentElement.style.setProperty('--vw', `${vw}px`);
-};
 
 setViewportSize();
 window.addEventListener('resize', setViewportSize);

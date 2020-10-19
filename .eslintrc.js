@@ -33,6 +33,7 @@ module.exports = {
     ],
     'node/global-require': 'error',
     'node/no-deprecated-api': 'error',
+    'node/no-unpublished-import': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
   },
 };
