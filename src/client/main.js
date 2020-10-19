@@ -1,3 +1,4 @@
+import './styles/main.scss';
 import { setViewportSize } from './utils/viewport';
 
 const body = document.querySelector(`.body`);

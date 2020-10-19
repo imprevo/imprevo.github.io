@@ -1,4 +1,5 @@
 import path from 'path';
+import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
 
 const prod = process.env.NODE_ENV === 'production';
@@ -13,5 +14,5 @@ export default {
     name: 'main',
     file: path.join(distPath, 'main.js'),
   },
-  plugins: [prod && terser()],
+  plugins: [postcss({ extract: true }), prod && terser()],
 };
