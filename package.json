@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "autoprefixer": "^9.8.6",
     "eleventy-plugin-manifest": "^1.0.1",
     "eslint": "^7.11.0",
     "eslint-plugin-import": "^2.22.1",

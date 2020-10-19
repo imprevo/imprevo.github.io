@@ -14,5 +14,11 @@ export default {
     name: 'main',
     file: path.join(distPath, 'main.js'),
   },
-  plugins: [postcss({ extract: true }), prod && terser()],
+  plugins: [
+    postcss({
+      extract: true,
+      minimize: prod,
+    }),
+    prod && terser(),
+  ],
 };
