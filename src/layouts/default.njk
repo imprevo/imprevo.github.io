@@ -9,7 +9,13 @@
     {{ site.manifest | manifest | safe }}
   </head>
   <body>
-    {{ content | safe }}
+    <div class="body is-loading">
+      <div class="wrapper">
+        {{ content | safe }}
+        {% include 'footer.njk' %}
+      </div>
+      {% include 'background.njk' %}
+    </div>
     <script src="/build/main.js"></script>
   </body>
 </html>
