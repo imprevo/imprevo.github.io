@@ -1,0 +1,29 @@
+---
+layout: default
+title: imprevo
+description: Frontside Varial Kickflip Developer
+---
+
+{% import 'macros/articles.njk' as articles %}
+
+{% include 'header.njk' %}
+
+<div class="article-list">
+  <div class="article-wrapper">
+
+    {% call articles.article('about', 'About') -%}
+    <span class="image main">
+      <img src="/images/photo.jpg" alt="photo">
+    </span>
+    <p>Hello, world! I'm a Frontend developer from Siberia.</p>
+    <p>Most of the time i build SPA: fast, secure, responsive and multilingual. I care about quality, productivity and ease of support. I am trying to automate routine tasks using various tools.</p>
+    <p>Besides programming i have favorite hobby: video games, snowboarding, comics. And of course i love making things!</p>
+    {%- endcall %}
+
+    {% call articles.article('contact', 'Contact') -%}
+    <p>If you want to contact me or want to know more about me, you can find me on social networks.</p>
+    {% include 'social-icons.njk' %}
+    {%- endcall %}
+
+  </div>
+</div>

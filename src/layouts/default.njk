@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}"/>
+    <link type="text/css" rel="stylesheet" href="/build/main.css">
+    {{ site.manifest | manifest | safe }}
+  </head>
+  <body>
+    <div class="body is-loading">
+      <div class="wrapper">
+        {{ content | safe }}
+        {% include 'footer.njk' %}
+      </div>
+      {% include 'background.njk' %}
+    </div>
+    <script src="/build/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{% macro article(id, title) %}
+  <article id="{{ id }}" class="article">
+    <h2 class="major">{{ title }}</h2>
+    {{ caller() | safe }}
+    <button class="article-close"></button>
+  </article>
+{% endmacro %}
