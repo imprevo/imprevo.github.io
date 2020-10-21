@@ -63,7 +63,7 @@
       "eslint --fix"
     ],
     "*.{scss}": "prettier --write",
-    "*.{html,json}": "prettier --write",
+    "*.{html,json,yml}": "prettier --write",
     "*.{svg}": "prettier --parser html --write"
   }
 }
