@@ -22,7 +22,7 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/dev'
     steps:
-      - uses: JamesIves/github-pages-deploy-action@3
+      - uses: JamesIves/github-pages-deploy-action@v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: master
