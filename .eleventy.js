@@ -16,7 +16,6 @@ function htmlMinTransform(content, outputPath) {
   return content;
 }
 
-// TODO: manifestand favicons
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
   eleventyConfig.addPlugin(pluginManifest);
