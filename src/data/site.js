@@ -1,5 +1,7 @@
 module.exports = {
+  baseUrl: 'https://imprevo.github.io',
   title: 'imprevo',
+  image: '/images/photo.jpg',
   manifest: {
     name: 'imprevo',
     short_name: 'imprevo',

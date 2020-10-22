@@ -1,5 +1,6 @@
 const pluginManifest = require('eleventy-plugin-manifest');
 const htmlmin = require('html-minifier');
+const { baseUrl } = require('./src/data/site');
 
 const prod = process.env.NODE_ENV === 'production';
 
@@ -16,6 +17,10 @@ function htmlMinTransform(content, outputPath) {
   return content;
 }
 
+function absoluteUrlFilter(url) {
+  return `${baseUrl}${url}`;
+}
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
   eleventyConfig.addPlugin(pluginManifest);
@@ -23,6 +28,7 @@ module.exports = (eleventyConfig) => {
     files: ['dist/**/*'],
     open: true,
   });
+  eleventyConfig.addFilter('absoluteUrl', absoluteUrlFilter);
 
   if (prod) {
     eleventyConfig.addTransform('htmlmin', htmlMinTransform);
