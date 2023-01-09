@@ -34,7 +34,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^1.0.2",
     "autoprefixer": "^9.8.6",
     "eleventy-plugin-manifest": "^1.0.1",
     "eslint": "^7.11.0",
