@@ -1,0 +1,38 @@
+<article>
+  <div class="row">
+    <div class="column">
+      <h2 class="title">Hi!</h2>
+      <p class="description">I'm Evgeny. Frontend Developer.</p>
+    </div>
+    <div class="column">
+      <img src="favicon.svg" alt="" />
+    </div>
+  </div>
+</article>
+
+<style>
+  .row {
+    @media (width > 768px) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

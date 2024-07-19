@@ -1,0 +1,37 @@
+<article>
+  <h2>My skills</h2>
+
+  <div class="row">
+    <div class="column">
+      <img src="favicon.svg" alt="" />
+    </div>
+
+    <div class="column">
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<style>
+  .row {
+    @media (width > 768px) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
